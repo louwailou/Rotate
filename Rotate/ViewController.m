@@ -17,6 +17,7 @@ static int timevalues = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.rote = [[MFCircleRuningView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 231)];
+    [self.view addSubview:self.rote];
     [self.rote startAnimation];
     
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -27,7 +28,8 @@ static int timevalues = 0;
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (void)action{
-    if (timevalues %2==0) {
+    timevalues ++;
+    if (timevalues %2==1) {// 如果连续stop两次，应为间隔很小就看不出resume的效果
         [self.rote stopAnimation];
     }else{
         [self.rote  restart];

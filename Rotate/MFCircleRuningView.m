@@ -45,6 +45,9 @@ static CGFloat textCircleWidth = 20;
 }
 - (void)setUp{
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(stopAnimation) name:UIApplicationWillResignActiveNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(restart) name:UIApplicationWillEnterForegroundNotification object:nil];
     self.imgForBg = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"mine_finding_bg"] stretchableImageWithLeftCapWidth:0 topCapHeight:0]];
     [self addSubview:self.imgForBg];
     UIColor *strokeColor =[UIColor colorWithRed:1. green:1. blue:1. alpha:.2];
@@ -199,13 +202,40 @@ static CGFloat textCircleWidth = 20;
 }
 
 - (void)restart{
+    
+   NSLog(@"%@",[self.circleView.layer animationKeys]);//pos
+   
     [self resumeLayer:self.circleView.layer];
     [self resumeLayer:self.circleViewTwo.layer];
     
     [self resumeLayer:self.circleViewThree.layer];
     [self resumeLayer:self.circleViewFour.layer];
 }
+// 实现暂停 开始的另外一种方式是 对animatioin 对象进行copy，重新启动就 在给对应的layer 赋值
 
+/*
+ 
+ - (void) startAnimation {
+ // On first call, setup our ivar
+ if (!self.myAnimation) {
+ self.myAnimation = [CABasicAnimation animationWithKeyPath:@"transform"];
+ 
+ Finish setting up myAnimation
+ 
+}
+
+// Add the animation to the layer if it hasn't been or got removed
+if (![self.layer animationForKey:@"myAnimation"]) {
+    [self.layer addAnimation:self.spinAnimation forKey:@"myAnimation"];
+}
+}
+
+- (void) pauseAnimation {
+    // Save the current state of the animation
+    // when we call startAnimation again, this saved animation will be added/restored
+    self.myAnimation = [[self.layer animationForKey:@"myAnimation"] copy];
+}
+ */
 -(void)pauseLayer:(CALayer*)layer
 {
     CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
