@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A53C570E-FE91-4745-9CA2-F8DECF502684</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Rotate</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>57C79401C2124BD4CEBE21F76751ED6CC0DD90A5</key>
+		<string>https://github.com/louwailou/Rotate.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Rotate.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>57C79401C2124BD4CEBE21F76751ED6CC0DD90A5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/louwailou/Rotate.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>57C79401C2124BD4CEBE21F76751ED6CC0DD90A5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>57C79401C2124BD4CEBE21F76751ED6CC0DD90A5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Rotate</string>
+		</dict>
+	</array>
+</dict>
+</plist>

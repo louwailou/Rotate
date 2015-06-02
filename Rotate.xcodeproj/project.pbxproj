@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A458FAC41B1DC8F6007BE0D9 /* MFCircleRuningView.m in Sources */ = {isa = PBXBuildFile; fileRef = A458FAC31B1DC8F6007BE0D9 /* MFCircleRuningView.m */; };
 		A4E2C06C1B18435400D89943 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E2C06B1B18435400D89943 /* main.m */; };
 		A4E2C06F1B18435400D89943 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E2C06E1B18435400D89943 /* AppDelegate.m */; };
 		A4E2C0721B18435500D89943 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E2C0711B18435500D89943 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A458FAC21B1DC8F6007BE0D9 /* MFCircleRuningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCircleRuningView.h; sourceTree = "<group>"; };
+		A458FAC31B1DC8F6007BE0D9 /* MFCircleRuningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCircleRuningView.m; sourceTree = "<group>"; };
 		A4E2C0661B18435400D89943 /* Rotate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rotate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E2C06A1B18435400D89943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4E2C06B1B18435400D89943 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				A4E2C06D1B18435400D89943 /* AppDelegate.h */,
+				A458FAC21B1DC8F6007BE0D9 /* MFCircleRuningView.h */,
+				A458FAC31B1DC8F6007BE0D9 /* MFCircleRuningView.m */,
 				A4E2C06E1B18435400D89943 /* AppDelegate.m */,
 				A4E2C0701B18435400D89943 /* ViewController.h */,
 				A4E2C0711B18435500D89943 /* ViewController.m */,
@@ -221,6 +226,7 @@
 			files = (
 				A4E2C0721B18435500D89943 /* ViewController.m in Sources */,
 				A4E2C06F1B18435400D89943 /* AppDelegate.m in Sources */,
+				A458FAC41B1DC8F6007BE0D9 /* MFCircleRuningView.m in Sources */,
 				A4E2C06C1B18435400D89943 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +422,7 @@
 				A4E2C08B1B18435500D89943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4E2C08C1B18435500D89943 /* Build configuration list for PBXNativeTarget "RotateTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +431,7 @@
 				A4E2C08E1B18435500D89943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
