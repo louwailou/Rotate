@@ -55,10 +55,10 @@ static CGFloat basyFont = 7;
     [self addSubview:self.labelForText];
 
 }
-- (void)setLabelContent:(NSString *)labelContent{
-    
-    [self.labelForText setText:labelContent];
-}
+//- (void)setLabelContent:(NSString *)labelContent{
+//    
+//    [self.labelForText setText:labelContent];
+//}
 -(void)layoutSubviews{
     [super layoutSubviews];
  
@@ -67,6 +67,8 @@ static CGFloat basyFont = 7;
 }
 
 - (void)drawRect:(CGRect)rect {
+    
+    
     
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -82,9 +84,12 @@ static CGFloat basyFont = 7;
     // 画出背景色
     CGContextDrawPath(context, kCGPathFill);
     
-//    
-//    NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:NSFontAttributeName,[UIFont systemFontOfSize:basyFont + self.index%3],NSStrokeColorAttributeName,[UIColor redColor], nil];
-//    [self.labelContent drawWithRect:rect options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil];
+//
+    NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:basyFont + self.index%3],NSFontAttributeName,[UIColor redColor],NSForegroundColorAttributeName, nil];
+    [self.labelContent drawWithRect:rect options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil];
+    
+    
+   
     
 }
 
