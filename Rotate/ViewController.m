@@ -30,7 +30,7 @@ static int timevalues = 0;
     if (timevalues %2==0) {
         [self.rote stopAnimation];
     }else{
-        self.rote  
+        [self.rote  restart];
     }
 }
 - (void)didReceiveMemoryWarning {

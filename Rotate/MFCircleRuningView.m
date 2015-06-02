@@ -9,7 +9,7 @@
 #define DEGREES_TO_RADIANS(degrees) ((degrees)*M_PI/180.0)
 #import "MFCircleRuningView.h"
 #import "MFCircleView.h"
-#import "MFAccountTool.h"
+
 static CGFloat delteRadius = 20;
 static CGFloat baseRaduis = 30;
 static CGFloat textCircleWidth = 20;
@@ -175,8 +175,11 @@ static CGFloat textCircleWidth = 20;
 
 - (void)stopAnimation{
     
+    [self pauseLayer:self.circleView.layer];
+    [self pauseLayer:self.circleViewTwo.layer];
     
-    
+    [self pauseLayer:self.circleViewThree.layer];
+    [self pauseLayer:self.circleViewFour.layer];
     return;
     [self.circleView removeFromSuperview];
     [self.circleView.layer removeAnimationForKey:@"pos"];
@@ -196,8 +199,31 @@ static CGFloat textCircleWidth = 20;
 }
 
 - (void)restart{
+    [self resumeLayer:self.circleView.layer];
+    [self resumeLayer:self.circleViewTwo.layer];
     
+    [self resumeLayer:self.circleViewThree.layer];
+    [self resumeLayer:self.circleViewFour.layer];
 }
+
+-(void)pauseLayer:(CALayer*)layer
+{
+    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    layer.speed = 0.0;
+    layer.timeOffset = pausedTime;
+}
+
+-(void)resumeLayer:(CALayer*)layer
+{
+    CFTimeInterval pausedTime = [layer timeOffset];
+    layer.speed = 1.0;
+    layer.timeOffset = 0.0;
+    layer.beginTime = 0.0;
+    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+    layer.beginTime = timeSincePause;
+}
+
+
 - (void)setTextData:(NSString*)str{
     
 }
