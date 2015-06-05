@@ -56,7 +56,7 @@ static CGFloat textCircleWidth = 20;
     self.circleLayerTwo = [self createLayerWitStrokenColor:strokeColor.CGColor andIndex:1];
     [self.layer addSublayer:self.circleLayerTwo];
     self.circleLayerThree = [self createLayerWitStrokenColor:strokeColor.CGColor andIndex:2];
-    [self.layer addSublayer:self.circleLayerThree];
+   [self.layer addSublayer:self.circleLayerThree];
     
     self.circleLayerFour = [self createLayerWitStrokenColor:strokeColor.CGColor andIndex:3];
     [self.layer addSublayer:self.circleLayerFour];
@@ -89,13 +89,13 @@ static CGFloat textCircleWidth = 20;
     return layer;
 }
 
-- (CGFloat)radiansFromIndex:(NSInteger)index{
+- (CGFloat)startRadiansFromIndex:(NSInteger)index{
    
     
     CGFloat radians = 0;
     switch (index %4) {
         case 0:{
-             radians = 1;
+             radians =  DEGREES_TO_RADIANS(30);
             break;
         }
         case 1:{
@@ -117,6 +117,8 @@ static CGFloat textCircleWidth = 20;
     
     return radians;
 }
+
+
 - (MFCircleView*)createCircleViewWithIndex:(NSInteger)index{
     
    CGPoint point =  [self calculateCircleViewPointByIndex:index];
@@ -132,7 +134,7 @@ static CGFloat textCircleWidth = 20;
     CGFloat y = 0;
      CGFloat radius = baseRaduis+delteRadius *index;
     CGFloat width = textCircleWidth + index %4 * 5;
-    CGFloat radian = [self radiansFromIndex:index];
+    CGFloat radian = [self startRadiansFromIndex:index];
     
     x = self.bounds.size.width/2 - radius*sin(radian)  -width/2;
     y = self.bounds.size.height/2 - radius*cos(radian) - width/2;
@@ -140,14 +142,15 @@ static CGFloat textCircleWidth = 20;
     return  CGPointMake(x, y);
 }
 - (CGPathRef)circlePathWithRadius:(CGFloat)delta andIndex:(NSInteger)index{
-    CGFloat start = [self radiansFromIndex:index ];
-    CGFloat end = [self radiansFromIndex:index ] + M_PI*2;
+    CGFloat start = [self startRadiansFromIndex:index ];
+    CGFloat end =  start + M_PI*2 ;//[self endRadiansFromIndex:index];// - [self radiansFromIndex:index ] ;
     if (index == 3) {
         start = 0;
         end = 2*M_PI;
     }
    
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2) radius:baseRaduis+delta startAngle:start endAngle:end clockwise:NO];
+    NSLog(@"path =%@",path);
     return path.CGPath;
 }
 
